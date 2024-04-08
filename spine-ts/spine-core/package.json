@@ -1,33 +1,17 @@
 {
-  "name": "@esotericsoftware/spine-core",
-  "version": "4.1.51",
-  "description": "The official Spine Runtimes for the web.",
+  "name": "@kimarisgg/spine-core",
+  "version": "1.0.0",
+  "description": "Fork of the official Spine Runtimes for the web.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "files": [
-    "dist/**/*",
-    "README.md",
-    "LICENSE"
+    "dist/**/*"
   ],
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/esotericsoftware/spine-runtimes.git"
-  },
-  "keywords": [
-    "gamedev",
-    "animations",
-    "2d",
-    "spine",
-    "game-dev",
-    "runtimes",
-    "skeletal"
-  ],
-  "author": "Esoteric Software LLC",
-  "license": "LicenseRef-LICENSE",
-  "bugs": {
-    "url": "https://github.com/esotericsoftware/spine-runtimes/issues"
-  },
-  "homepage": "https://github.com/esotericsoftware/spine-runtimes#readme"
+  "scripts": {
+    "clean": "npx rimraf ./dist",
+    "build": "npm run clean && npm run build:ts && npm run build:esbuild",
+    "build:ts": "npx tsc -b -clean && npx tsc -b",
+    "build:esbuild": "npx esbuild --bundle src/index.ts --sourcemap --outfile=dist/iife/spine-core.js --format=iife --global-name=spine"
+  }
 }

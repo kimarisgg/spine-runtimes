@@ -1,44 +1,28 @@
 {
-  "name": "@esotericsoftware/spine-pixi",
-  "version": "4.1.51",
-  "description": "The official Spine Runtimes for the web.",
+  "name": "@kimarisgg/pixi-spine",
+  "version": "1.0.0",
+  "description": "Fork of the official Spine Runtimes for the web.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "files": [
-    "dist/**/*",
-    "README.md",
-    "LICENSE"
+    "dist/**/*"
   ],
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/esotericsoftware/spine-runtimes.git"
+  "scripts": {
+    "clean": "npx rimraf ./dist",
+    "build": "npm run clean && npm run build:ts && npm run build:esbuild",
+    "build:ts": "npx tsc -b -clean && npx tsc -b",
+    "build:esbuild": "npx esbuild --bundle src/index.ts --sourcemap --outfile=dist/iife/spine-pixi.js --external:@pixi/* --format=iife --global-name=spine"
   },
-  "keywords": [
-    "gamedev",
-    "animations",
-    "2d",
-    "spine",
-    "game-dev",
-    "runtimes",
-    "skeletal"
-  ],
-  "author": "Esoteric Software LLC",
-  "license": "LicenseRef-LICENSE",
-  "bugs": {
-    "url": "https://github.com/esotericsoftware/spine-runtimes/issues"
-  },
-  "homepage": "https://github.com/esotericsoftware/spine-runtimes#readme",
   "dependencies": {
-    "@esotericsoftware/spine-core": "4.1.51"
+    "@kimarisgg/spine-core": "1.0.0"
   },
   "peerDependencies": {
-    "@pixi/core": "^7.2.4",
-    "@pixi/display": "^7.2.4",
-    "@pixi/graphics": "^7.2.4",
-    "@pixi/text": "^7.2.4",
-    "@pixi/assets": "^7.2.4",
-    "@pixi/mesh": "^7.2.4"
+    "@pixi/core": "^7.3.3",
+    "@pixi/display": "^7.3.3",
+    "@pixi/graphics": "^7.3.3",
+    "@pixi/text": "^7.3.3",
+    "@pixi/assets": "^7.3.3",
+    "@pixi/mesh": "^7.3.3"
   }
 }

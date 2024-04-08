@@ -1,0 +1,31 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "spine-ts/spine-core",
+    "spine-ts/spine-pixi"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "clean": "npm run clean --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "deps:check": "npx npm-check-updates -i -ws --root"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@types/node": "^20.11.5",
+    "esbuild": "^0.19.11",
+    "husky": "^8.0.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-embed": "^0.4.7",
+    "prettier-plugin-sql": "^0.18.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  }
+}
