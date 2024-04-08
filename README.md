@@ -1,4 +1,8 @@
-# Spine Runtimes
+# Kimaris
+
+This is just a fork of the main `spine-runtimes` repository. Our only goal is to backport some changes they've made on 4.x to the versions we use on PixiJS since `pixi-spine` had a lot of bugs or wrong behaviours that did not match the official runtime. We removed everything else.
+
+# Spine Runtimes (Original README starts here)
 
 This GitHub project hosts the Spine Runtimes which are needed to use [Spine](http://esotericsoftware.com/) 2D skeletal animation data with various game toolkits.
 
