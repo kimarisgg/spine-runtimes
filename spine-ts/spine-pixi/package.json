@@ -18,11 +18,11 @@
     "@kimarisgg/spine-core": "1.0.0"
   },
   "peerDependencies": {
-    "@pixi/core": "^7.3.3",
-    "@pixi/display": "^7.3.3",
-    "@pixi/graphics": "^7.3.3",
-    "@pixi/text": "^7.3.3",
-    "@pixi/assets": "^7.3.3",
-    "@pixi/mesh": "^7.3.3"
+    "@pixi/core": "^7.4.2",
+    "@pixi/display": "^7.4.2",
+    "@pixi/graphics": "^7.4.2",
+    "@pixi/text": "^7.4.2",
+    "@pixi/assets": "^7.4.2",
+    "@pixi/mesh": "^7.4.2"
   }
 }
